@@ -1,0 +1,31 @@
+.label {
+  display: block;
+  color: #777;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.input {
+  min-width: 260px;
+  border: 1px solid #d2d2d2;
+  border-radius: 2px;
+  padding: 6px 12px;
+  font-size: 15px;
+  vertical-align: bottom;
+  font-family: inherit;
+}
+
+.input:focus {
+  border-color: #02E2FF;
+  outline: 1px solid #02E2FF;
+}
+
+.error {
+  font-size: 12px;
+  color: #ff3d00;
+}
+
+.asterisk {
+  color: #ff3d00;
+}

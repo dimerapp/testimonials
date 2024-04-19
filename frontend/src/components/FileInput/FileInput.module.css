@@ -1,0 +1,53 @@
+.label {
+  display: block;
+  color: #777;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+
+.error {
+  font-size: 12px;
+  color: #ff3d00;
+}
+
+.asterisk {
+  color: #ff3d00;
+}
+
+.inputWrapper {
+  position: relative;
+}
+
+.visualInput {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  border: 1px dashed #d2d2d2;
+  border-radius: 2px;
+  width: 380px;
+  padding: 12px;
+  cursor: pointer;
+}
+
+.input:focus+.visualInput {
+  border-color: #02E2FF;
+}
+
+.visualBtn {
+  border: 1px solid #ddd;
+  background-color: rgba(221, 221, 221, 0.094);
+  padding: 2px 10px;
+  border-radius: 2px;
+  font-size: 13px;
+}
+
+.visualBtn:hover {
+  background-color: rgba(221, 221, 221, 0.15);
+}

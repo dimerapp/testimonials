@@ -1,0 +1,35 @@
+.overlay {
+  position: fixed;
+  inset: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(97, 66, 210, 0.2);
+  ;
+}
+
+.modal {
+  background-color: #fff;
+  max-width: 100%;
+  padding: 14px 24px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.133);
+  border-radius: 2px;
+  transform: translateY(-5%);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 22px;
+}
+
+.closeButton {
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}

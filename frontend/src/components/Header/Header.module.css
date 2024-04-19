@@ -1,0 +1,54 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1280px;
+  margin: 0 auto 40px;
+}
+
+.dropdown {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav {
+  display: flex;
+  gap: 10px;
+}
+
+.link {
+  padding: 2px 4px;
+  border-radius: 2px;
+  color: #888;
+  font-weight: 500;
+  transition: 0.1s;
+}
+
+.linkActive {
+  color: #333;
+}
+
+.link:hover {
+  color: #333;
+  background-color: rgba(2, 225, 255, 0.24);
+}
+
+.logoutButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 26px;
+  width: 26px;
+  padding: 4px;
+  color: #797878;
+  background-color: transparent;
+  border: 1px solid #e2e2e2;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.logoutButton:hover {
+  border-color: #02E2FF;
+  background-color: #02e1ff18;
+}

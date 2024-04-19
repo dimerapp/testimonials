@@ -1,0 +1,21 @@
+.button {
+  background-color: #6142d2;
+  color: #fff;
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 2px;
+  font-size: 14px;
+  letter-spacing: 0.1px;
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #461c7c;
+}
+
+.button[disabled] {
+  opacity: 0.6;
+  pointer-events: none;
+}

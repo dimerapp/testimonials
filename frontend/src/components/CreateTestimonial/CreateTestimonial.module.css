@@ -1,0 +1,25 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.fileInput {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.existingAvatar {
+  height: 50px;
+  border-radius: 2px;
+  opacity: 0.8;
+}
+
+.saveButton {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-block: 8px;
+}

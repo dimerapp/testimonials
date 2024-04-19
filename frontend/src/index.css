@@ -1,0 +1,74 @@
+:root {
+  line-height: 1.5;
+  color: #222;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "slnt"0;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+svg {
+  vertical-align: bottom;
+}
+
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+  transition: 0.2s;
+}
+
+.ReactModal__Content {
+  transform: scale(0.75);
+  transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.175);
+}
+
+.ReactModal__Content--after-open {
+  transform: none;
+}
+
+.ReactModal__Content--before-close {
+  transform: scale(0.92);
+  transition: transform 0.15s;
+}
