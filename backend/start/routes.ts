@@ -33,11 +33,11 @@ router.get('/uploads/*', ({ request, response }) => {
 router
   .group(() => {
     router.post('login', [SessionController, 'store'])
-    router.delete('logout', [SessionController, 'destroy'])
-    router.resource('groups', GroupsController).apiOnly().use('*', middleware.auth())
+    router.delete('logout', [SessionController, 'destroy']).use(middleware.auth())
+    router.resource('groups', GroupsController).apiOnly().use(['destroy', 'store', 'update'], middleware.auth())
     router
       .resource('groups.testimonials', TestimonialsController)
       .apiOnly()
-      .use('*', middleware.auth())
+      .use(['destroy', 'store', 'update'], middleware.auth())
   })
   .prefix('api')
