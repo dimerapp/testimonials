@@ -1,6 +1,6 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { ChevronDown, Check, PlusCircle } from 'react-feather'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
 
@@ -16,7 +16,9 @@ export const Groups = ({
   onAddClick,
 }: Props) => {
   const navigate = useNavigate()
+  const { groupId } = useParams()
   const [isOpen, setIsOpen] = useState(false)
+  const ref = useOutsideClick(() => setIsOpen(false))
 
   const query = useQuery({
     queryKey: ['groups'],
@@ -26,17 +28,28 @@ export const Groups = ({
     }
   })
 
-  const groups: Group[] = query.data?.data ?? []
+  const updateLS = (_groupId: string) => {
+    localStorage.setItem('group_id', _groupId)
+  }
 
   const handleChange = (_groupId: number) => {
     navigate(`../groups/${_groupId}/testimonials`)
-    localStorage.setItem('group_id', String(_groupId))
+    updateLS(String(_groupId))
   }
 
-  const ref = useOutsideClick(() => setIsOpen(false))
+  const groups: Group[] = query.data?.data ?? []
+  const selectedGroupId = groupId ?? localStorage.getItem('group_id')
+  const selected = groups.find(group => String(group.id) === selectedGroupId) ?? groups[0]
 
-  const lsGroupId = localStorage.getItem('group_id')
-  const selected = groups.find(group => String(group.id) === lsGroupId) ?? groups[0]
+  useEffect(() => {
+    if (!query.isLoading && !groups.length) {
+      onAddClick()
+    }
+  }, [groups])
+
+  useEffect(() => {
+    selectedGroupId && updateLS(selectedGroupId)
+  }, [groupId])
 
   return (
     <div className={`${s.container} ${isOpen ? s.isOpen : ''}`} ref={ref}>
@@ -46,7 +59,6 @@ export const Groups = ({
       </button>
 
       <div className={s.items}>
-
         {groups.map((group: Group) => (
           <div
             key={group.id}
@@ -62,9 +74,7 @@ export const Groups = ({
             )}
           </div>
         ))}
-
         <div className={s.separator} />
-
         <button onClick={() => {
           setIsOpen(false)
           onAddClick()
@@ -72,7 +82,6 @@ export const Groups = ({
           <PlusCircle size={14} />
           New Group
         </button>
-
       </div>
     </div>
   )

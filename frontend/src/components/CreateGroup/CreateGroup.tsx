@@ -12,7 +12,7 @@ type FormValues = {
   name: string
 }
 type Props = {
-  onSuccess: () => void
+  onSuccess: (id: number) => void
 }
 
 export const CreateGroup = ({
@@ -31,7 +31,7 @@ export const CreateGroup = ({
     )
     setIsLoading(false)
     if (response.status === 201) {
-      onSuccess()
+      onSuccess(response.data.data.id)
       toast.success('New group added.')
       queryClient.invalidateQueries({ queryKey: ['groups'] })
     }

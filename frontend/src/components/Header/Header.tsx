@@ -11,8 +11,9 @@ export const Header = () => {
   const [showModal, setShowModal] = useState(false)
   const navigate = useNavigate()
 
-  const closeModal = () => {
+  const afterCreateGroup = (id: number) => {
     setShowModal(false)
+    navigate(`/groups/${id}/testimonials`)
   }
 
   const storedGroupId = localStorage.getItem('group_id')
@@ -44,9 +45,9 @@ export const Header = () => {
       <Modal
         title="Add Group"
         isOpen={showModal}
-        onClose={closeModal}
+        onClose={() => setShowModal(false)}
       >
-        <CreateGroup onSuccess={closeModal} />
+        <CreateGroup onSuccess={afterCreateGroup} />
       </Modal>
     </header>
   )

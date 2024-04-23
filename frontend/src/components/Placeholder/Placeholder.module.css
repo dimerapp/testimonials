@@ -1,0 +1,43 @@
+.container {
+  position: relative;
+  background-color: #f5f7fa;
+  border-radius: 2px;
+  padding: 24px 18px;
+}
+
+.avatar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 48px;
+  width: 48px;
+  background-color: #e9edf2;
+  border-radius: 2px;
+  margin-bottom: 4px;
+}
+
+.name {
+  width: 200px;
+  height: 30px;
+  background-color: #e9edf2;
+  border-radius: 2px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.role {
+  margin-bottom: 8px;
+  color: #777;
+  font-weight: 600;
+  width: 150px;
+  height: 20px;
+  background-color: #e9edf2;
+}
+
+.content {
+  font-size: 14px;
+  color: #666;
+  width: 100%;
+  height: 100px;
+  background-color: #e9edf2;
+}
